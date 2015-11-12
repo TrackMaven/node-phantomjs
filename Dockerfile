@@ -19,6 +19,10 @@ RUN \
   apt-get update && \
   apt-get install -y nodejs
 
+# Install Stable NPM
+RUN \
+  npm install npm@3.3.12
+
 # Install Phantom.js
 ENV PHANTOMJS_VERSION 1.9.7
 
