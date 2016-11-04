@@ -25,7 +25,7 @@ RUN \
   npm install npm@3.10.9
 
 # Install Phantom.js
-ENV PHANTOMJS_VERSION 1.9.7
+ENV PHANTOMJS_VERSION 1.9.8
 
 RUN \
   apt-get install -y libfreetype6 libfontconfig && \
