@@ -10,18 +10,19 @@ RUN \
                      bzip2 \
                      python2.7-dev \
                      software-properties-common \
+                     curl \
                      wget
 
 # Install Node.js
 RUN \
-  apt-key adv --keyserver keyserver.ubuntu.com --recv 68576280 && \
-  apt-add-repository 'deb https://deb.nodesource.com/node_4.x precise main' && \
+  curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+RUN \
   apt-get update && \
   apt-get install -y nodejs
 
 # Install Stable NPM
 RUN \
-  npm install npm@3.3.12
+  npm install npm@3.10.9
 
 # Install Phantom.js
 ENV PHANTOMJS_VERSION 1.9.7
